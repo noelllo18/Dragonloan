@@ -74,8 +74,12 @@ body{
     font-family: "Poppins", serif;
 }
 .container{
-    max-width: 90%;
+    display: flex;
+    max-width: 1200px;
+    width: 90%;
     margin: 0 auto;
+    flex-direction: column;
+   
     
 }
 /* --------NAVIGATION--------- */
@@ -101,7 +105,7 @@ nav{
 }
 .dragon{
     width: 450px;
-    height: clamp(150px, 10vw, 350px);
+    height: 250px;
 }
 nav .contact{
     display: flex;
@@ -149,11 +153,11 @@ h1{
     justify-content: center;
     flex-direction: column;
     max-width: 1400px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     height:500px;
     position: relative;
-    margin-bottom: 250px;
+    margin-bottom: 450px;
     z-index: -1;
 
     /* background-color: #000; */
@@ -163,8 +167,9 @@ h1{
    font-size: clamp(4em, 5vw, 6em);
    font-weight: var(--font-weight-bold);
    left: 0;
-   top: 20%;
+   top: 5%;
    width: 550px;
+   
    
     
 }
@@ -172,23 +177,26 @@ h1{
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 30px;
     width: 10px;
     left: 0;
-    bottom: 11%;
+    bottom: 4%;
+    width: 90%;
    
 }
 .about {
     position: absolute;
     display: flex;
     flex-direction: column;
-    width: 400px;
+    width: 90%;
     height: 100px;
     left: 30px;
     bottom: 22%;
     font-size:1.4rem;
     font-weight: bold;
     gap: 25px;
+    line-height: var(--line-height-tight);
+    font-size: clamp(1.5rem, 5vw, 2.4rem);
    
     /* background-color: #000; */
 
@@ -198,6 +206,7 @@ h1{
     left: 0;
     bottom: 48%;
     font-weight: var(--font-weight-bold);
+    
 }
 
 .hero-img{
@@ -220,7 +229,8 @@ h1{
 }
 .why-us{
     position: relative;
-    top: 50%;
+    top: 80%;
+    width: 100%;
     z-index: -1;
 }
 .why-us img{
@@ -283,11 +293,17 @@ h1{
         border-bottom: 2px solid black;
 
     }
-    
-}
-@media (min-width:200px){
     .dragon{
         height: 150px;
+        width: 150px;
+        background-color: transparent;
+    }
+}
+@media (max-width:500px){
+    .dragon{
+        height: 150px;
+        width: 150px;
+        background-color: transparent;
     }
     .hero-section h1{
         position: absolute;
@@ -298,6 +314,21 @@ h1{
         width: 550px;
         
          
+     }
+     .hero-img{
+            
+            right: 0;
+            top: 0;
+            display: none;
+            bottom: 0;
+            
+            justify-content: flex-end;
+            opacity: 0.8;
+            object-fit: cover;
+            height: 150px;
+            z-index: -1;
+        
+        }
      }
 }
 
