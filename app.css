@@ -86,43 +86,48 @@ body{
 /* --------NAVIGATION--------- */
 nav{
     display: flex;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    height: 90px;
-    padding: 1.0rem;
-    position: absolute;
+    justify-content:center;
+    
+    min-height: 30px;
+    padding: 2.0rem;
+    position: relative;
     top: 0;
-    left: 5%;
-    right: 5%;
+    left: 0;
+    right: 0;
     z-index: 99;
 }
 .sh{
     font-family: "Playwrite IT Moderna", serif;
-  font-optical-sizing: auto;
-  font-weight: var(--font-weight-bold);
-  font-style: normal;
+    font-optical-sizing: auto;
+     font-weight: var(--font-weight-bold);
+    font-style: normal;
 }
-.dragon{
+nav .dragon{
     margin-right: auto;
-    width: 450px;
-    height: 250px;
-    background-image: transparent;
-    padding: 3.0rem;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    
     
   
     
 }
-nav .contact{
+ .contact{
     display: flex;
+    align-items: center;
+    justify-content:center;
     gap: 10px;
    
 }
 .contact a,p{
     text-decoration: none;
     color: #000;
+    display: flex;
+    align-items: center;
+    justify-content:center;
 }
 nav .account{
     display: flex;
@@ -133,7 +138,7 @@ nav .account{
 button{
     font-size: 24px;
     padding: 1.0rem 3.5rem;
-    border-radius: 25px;
+   
 
     
 }
@@ -184,14 +189,13 @@ h1{
 .checkbox{
     position: absolute;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    gap: 30px;
-    width: 10px;
+    bottom: 20;
     left: 0;
-    bottom: 4%;
-    width: 90%;
-   
 }
+
 .about {
     position: absolute;
     display: flex;
@@ -210,6 +214,7 @@ h1{
 
 }
 .about1{
+
     position: absolute;
     left: 0;
     bottom: 48%;
@@ -231,17 +236,28 @@ h1{
 
 }
 .btn-primary{
-
+    align-items: center;
     display: flex;
     width: 200px;
     justify-content: center;
     background-color: var(--pallete-24);
     border: none;
+    border-radius: 2.0rem;
+    box-shadow: 0 2px 0 rgb(0, 0, 0, 25);
+}
+.btn-secondary{
+    align-items: center;
+    display: flex;
+    width: 200px;
+    justify-content: center;
+    background-color: var(--pallete-12);
+    border: none;
+    border-radius: 2.0rem;
     box-shadow: 0 2px 0 rgb(0, 0, 0, 25);
 }
 .why-us{
     position: relative;
-    top: 80%;
+    top: 10%;
     width: 100%;
     z-index: -1;
 }
@@ -308,26 +324,39 @@ h1{
     /* background-color: #023336; */
     display: flex;
 
-    top: 350px;
+    
 
 }
 .trust-issue{
     display: flex;
     flex-direction: column;
-    background-color: #023336;
+   
+    /* background-color: #023336; */
     gap: 20px;
-    height: 200px;
+    min-height: 250px;
+    min-width: 250px;
     margin-bottom: 250px;
+  
 }
 .trust-issue, a{
   text-decoration: none;
-  color: var(--white);
-  height: 200px;
+  color: var(--black);
+  
+  font-size: clamp(
+    1em, 3vw, 3em);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.0rem;
+
+
+  
+  
 }
 .apply-head{
     background-color: #000;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -350,10 +379,11 @@ h1{
 }
 .fill-up{
     background-color: #19384A;
-    width: 90%;
-    margin: 0 auto;
+    width: 100%;
+    
     height: 800px;
     color: var(--white);
+    
     
 }
 .fill-up, ul{
@@ -363,20 +393,112 @@ h1{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 90%;
+
     margin: 0 auto;
+    color: var(--black);
+    padding: 2.0rem;
+    font-size: 1.4rem;
     
 }
-.loan ul{
+.loan-amount{
+    background-color: var(--white);
+    width: 90%;
+    min-height: 50px;
+    border-right: 2px solid #000;
+    border-bottom: 2px solid #000;
+    position: relative;
+    cursor: pointer;
+}
+.down, svg{
+    border: none;
+    background-color: transparent;
     position: absolute;
-    top: 5%;
-    left: 10%;
+    right: 0;
+
+}
+.loan, ul  {
+    background-color: var(--white);
+    width:100%;
+    border: none;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 75s ease-in;
+
+}
+
+
+.amount{
+    position: absolute;
+    transform: translateY(50%);
+    right: 12%;
+
+    
+    
+   
+}
+
+li:hover{
+    background-color: var(--pallete-26);
+    width: 100%;
+   
+}
+.loan{
+    display: none;
+    box-shadow: 5px 2px 15px rgba(0, 0, 0, 75);
+}
+.loan-amount:hover{
+    background-color: beige;
+}
+input{
+    width: 90%;
+    font-size: 1.4 rem;
+    padding: 1.0rem;
+    margin-bottom: 2.0rem;
+}
+.circle {
+    min-height: 50px;
+    min-width: 50px;
+    border-radius: 50%;
+    
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: rgb(127, 202, 202);
+    opacity: 0.8;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 25);
+   
+
 }
 
 @media (max-width:1200px) {
+    nav{
+        display: flex;
+        width: 100%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content:space-between;
+        
+
+        padding: 2.0rem;
+        position: relative;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 99;
+    }
+    .hero-section h1{
+        position: absolute;
+        font-size: clamp(4em, 5vw, 6em);
+        font-weight: var(--font-weight-bold);
+        left: 0;
+        top: 0;
+        width: 550px;
+    }
      .contact{
         padding: 1.0rem;
-        display: none;
+        display: flex;
         flex-direction: column;
         position: fixed;
         justify-content: flex-start;
@@ -400,12 +522,11 @@ h1{
         justify-content: center;
     }
     
-    .open{
-        display: none;
-    }
+   
      
     .open,.close{
         display: flex;
+        align-items: center;
         cursor: pointer;
     }
     button{
@@ -436,9 +557,10 @@ h1{
     }
     .dragon{
         
-        margin-right: auto;
-        height: 350px;
-        width: 350px;
+        
+        height: 150px;
+        width: 250px;
+        
         background-color: transparent;
         
     }
@@ -498,16 +620,18 @@ h1{
         top: 250px;
     
     }
+   
 }
 
-@media (max-width:700px) {
+@media (max-width:  700px) {
     .contact{
        padding: 1.0rem;
-       display: none;
+       display: flex;
        flex-direction: column;
        position: fixed;
-       justify-content: flex-start;
+       justify-content: center;
        align-items: center;
+       
        top: 0;
        bottom: 0;
        right: -100%;
@@ -533,8 +657,11 @@ h1{
     
    .open,.close{
        display: flex;
+       align-items: center;
+       justify-content: center;
        cursor: pointer;
    }
+   
    button{
        font-size: 24px;
        padding: 1.0rem 1.5rem;
@@ -561,7 +688,7 @@ h1{
        border: none;
        box-shadow: 0 2px 0 rgb(0, 0, 0, 25);
    }
-   .dragon{
+   nav .dragon{
        margin-right: auto;
        height: 250px;
        width: 250px;
@@ -624,12 +751,37 @@ h1{
        top: 250px;
    
    }
+   .open{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+   }
 }
-@media (max-width:500px){
-    .dragon{
-        height: 200px;
-        width: 200px;
+@media (max-width:400px){
+    .contact{
         padding: 1.0rem;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        box-sizing: border-box;
+        width: 300px;
+        background-color: var(--white);
+        box-shadow: 0 12px 15px rgba(0, 0, 0, 25);
+        z-index: 99;
+        transition: .75s ease-in-out;
+    }
+    .dragon{
+        height: 100px;
+        width: 100px;
+        padding: 1.0rem;
+        margin-right: auto;
         background-color: transparent;
     }
     .hero-section h1{
@@ -660,7 +812,7 @@ h1{
         }
         .btn-primary{
             display: flex;
-            flex-grow: 0;
+           
             width: 200px;;
             border: none;
             border-bottom: 2px solid black;
@@ -739,11 +891,30 @@ h1{
         }
         
 }
-@media (max-width:400px){
-    .dragon{
-        height: 200px;
-        width: 200px;
+@media (max-width:300px){
+    .contact{
         padding: 1.0rem;
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        top: 0;
+        bottom: 0;
+        right: -100%;
+        box-sizing: border-box;
+        width: 300px;
+        background-color: var(--white);
+        box-shadow: 0 12px 15px rgba(0, 0, 0, 25);
+        z-index: 99;
+        transition: .75s ease-in-out;
+    }
+    .dragon{
+        height: 50px;
+        width: 50px;
+        padding: 1.0rem;
+        margin-right: auto;
         background-color: transparent;
     }
     .hero-section h1{
@@ -774,7 +945,7 @@ h1{
         }
         .btn-primary{
             display: flex;
-            flex-grow: 0;
+           
             width: 200px;;
             border: none;
             border-bottom: 2px solid black;
@@ -786,7 +957,7 @@ h1{
         }
         .btn-secondary{
             display: flex;
-            flex-grow: 0;
+            
             width: 200px;;
             border: none;
             border-bottom: 2px solid black;
@@ -851,6 +1022,14 @@ h1{
             top: 250px;
         
         }
+        .open{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 20px;
+            min-width: 20px;
+            
+       }
         
 }
 
