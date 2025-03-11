@@ -75,7 +75,7 @@ body{
 }
 .container{
     display: flex;
-    max-width: 1200px;
+
     width: 90%;
     margin: 0 auto;
     flex-direction: column;
@@ -334,7 +334,7 @@ h1{
     /* background-color: #023336; */
     gap: 20px;
     min-height: 250px;
-    min-width: 250px;
+    width: 100%;
     margin-bottom: 250px;
   
 }
@@ -383,74 +383,8 @@ h1{
     
     height: 800px;
     color: var(--white);
-    
-    
-}
-.fill-up, ul{
-    list-style: none;
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    margin: 0 auto;
-    color: var(--black);
-    padding: 2.0rem;
-    font-size: 1.4rem;
-    
-}
-.loan-amount{
-    background-color: var(--white);
-    width: 90%;
-    min-height: 50px;
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-    position: relative;
-    cursor: pointer;
-}
-.down, svg{
-    border: none;
-    background-color: transparent;
-    position: absolute;
-    right: 0;
-
-}
-.loan, ul  {
-    background-color: var(--white);
-    width:100%;
-    border: none;
-    display: flex;
-    align-items: flex-end;
-    margin-bottom: 20px;
-    cursor: pointer;
-    transition: 75s ease-in;
-
 }
 
-
-.amount{
-    position: absolute;
-    transform: translateY(50%);
-    right: 12%;
-
-    
-    
-   
-}
-
-li:hover{
-    background-color: var(--pallete-26);
-    width: 100%;
-   
-}
-.loan{
-    display: none;
-    box-shadow: 5px 2px 15px rgba(0, 0, 0, 75);
-}
-.loan-amount:hover{
-    background-color: beige;
-}
 input{
     width: 90%;
     font-size: 1.4 rem;
@@ -470,6 +404,43 @@ input{
     box-shadow: 0 8px 15px rgba(0, 0, 0, 25);
    
 
+}
+.form-group {
+    margin-bottom: 15px;
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    font-size: 24px;
+    margin-bottom: 5px;
+    display: flex;
+}
+.result {
+    margin-top: 20px;
+    display: none;
+    color: white;
+    text-align: center;
+ 
+}
+
+h3 {
+    font-size: 34px;
+    font-weight: var(--font-weight-bold);
+    margin-bottom: 10px;
+}
+
+input[type="number"] {
+    width: 90%;
+    padding: 8px;
+    margin-top: 5px;
+    font-size: 24px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
 }
 
 @media (max-width:1200px) {
@@ -624,6 +595,15 @@ input{
 }
 
 @media (max-width:  700px) {
+    .container{
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+        
     .contact{
        padding: 1.0rem;
        display: flex;
@@ -690,8 +670,8 @@ input{
    }
    nav .dragon{
        margin-right: auto;
-       height: 250px;
-       width: 250px;
+       height: 150px;
+       width: 150px;
        background-color: transparent;
        
    }
@@ -751,14 +731,25 @@ input{
        top: 250px;
    
    }
-   .open{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        
+    .dropdown{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+    width: 150px;
+    
    }
 }
+
 @media (max-width:400px){
+    .container{
+        display: flex;
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
     .contact{
         padding: 1.0rem;
         display: flex;
@@ -778,8 +769,11 @@ input{
         transition: .75s ease-in-out;
     }
     .dragon{
-        height: 100px;
-        width: 100px;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 1.0rem;
         margin-right: auto;
         background-color: transparent;
@@ -809,6 +803,13 @@ input{
             width: 100%;
             z-index: -1;
         
+        }
+        .open, svg{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 50px;
+            width: 50px;
         }
         .btn-primary{
             display: flex;

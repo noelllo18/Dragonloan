@@ -16,18 +16,34 @@ closebtn.addEventListener('click', ()=>{
 
 
 
-const  showamount =  document.querySelector('.dropdown');
-const  loanAmount = document.querySelector('.loan');
 
-console.log(loanAmount)
 
-showamount.addEventListener('click', ()=>{
-    loanAmount.style.display = 'flex';
+
+document.getElementById('loan-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Get user input values
+    const amount = parseFloat(document.getElementById('amount').value);
+    const interest = parseFloat(document.getElementById('interest').value) / 100 / 12;
+    const years = parseFloat(document.getElementById('years').value) * 12;
+
+    // Calculate monthly payment
+    const x = Math.pow(1 + interest, years);
+    const monthlyPayment = (amount * interest * x) / (x - 1);
+
+    // Check if calculation is a valid number
+    if (isNaN(monthlyPayment) || monthlyPayment === Infinity || monthlyPayment <= 0) {
+        alert('Please fill in all fields with valid values.');
+        return;
+    }
+
+    // Calculate total payment and total interest
+    const totalPayment = monthlyPayment * years;
+    const totalInterest = totalPayment - amount;
+
+    // Display the results
+    document.querySelector('.result').style.display = 'block';
+    document.getElementById('monthly-payment').innerText = monthlyPayment.toFixed(2);
+    document.getElementById('total-payment').innerText = totalPayment.toFixed(2);
+    document.getElementById('total-interest').innerText = totalInterest.toFixed(2);
 });
-
-showamount.addEventListener('click', ()=>{
-    loanAmount.style.display = 'flex';
-});
-
-
-
