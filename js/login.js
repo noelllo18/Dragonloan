@@ -1,3 +1,10 @@
+import 'airbnb-js-shims/target/es2015';
+import 'airbnb-browser-shims/browser-only';
+import 'airbnb-browser-shims';
+
+
+
+
 // Toggle between Login and Register forms
 function toggleForm() {
     const loginForm = document.getElementById('login-form');
