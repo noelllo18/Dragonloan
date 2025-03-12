@@ -70,7 +70,7 @@
         font-size: 62.5%;
       }
 body{
-    
+    background-color: #f5faf6;
     font-family: "Poppins", serif;
     
 }
@@ -109,7 +109,7 @@ nav a{
    max-height: 90px;
    margin-right: auto;
 
-   mix-blend-mode: color;
+   mix-blend-mode: darken;
     
 }
 a, span, p{
@@ -262,6 +262,7 @@ a:hover{
   top: 50%;
   right: 0;
   z-index: -2;
+  mix-blend-mode:normal
  
   max-width: 100%;
   
@@ -274,7 +275,7 @@ a:hover{
   background-color: #d2e9e1;
   position: relative;
   top: 20%;
-  left: 5%;
+  left: 25%;
   display: flex;
   padding: 2.0rem;
   align-items: center;
@@ -331,6 +332,7 @@ a:hover{
 }
 /* ---------cta-------- */
 .trust{
+  margin-top: 250px;
   max-width: 90%;
   margin-inline: auto;
   display: flex;
@@ -338,6 +340,7 @@ a:hover{
   gap: 50px;
 }
 .info{
+  margin-left: auto;
   display: flex;
   flex-direction: column;
   gap: 50px;
@@ -372,6 +375,7 @@ a:hover{
   text-decoration: line-through 2px solid ;
 }
 .apply-head{
+  margin-top: 150px;
   max-width: 90%;
   margin-inline: auto ;
 }
