@@ -146,7 +146,20 @@ h1{
     background-color: var(--pallete-13);
     
 }
-
+/* -----HEROSECTION--------*/
+.hero-section{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-inline: auto;
+  max-width: 90%;
+}
+.about{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  
+}
 
 /* ------icons------- */
 .icon-container{
