@@ -43,7 +43,7 @@
     --text-h4: 3.2rem;
     --text-h3:  4.0rem;
     --text-h2: 4.8rem;
-    --text-h1: clamp(4em, 5vw, 8em);
+    --text-h1: clamp(3em, 5vw, 5em);
     
     /*=============== fontweight ==============  */
     --font-weight-normal: 400;
@@ -72,6 +72,7 @@
 body{
     min-height: 100vh;
     font-family: "Poppins", serif;
+    
 }
 /* ---Nabigation----- */
 
@@ -111,13 +112,13 @@ nav a{
    mix-blend-mode: color;
     
 }
-a, span{
+a, span, p{
     font-size: var(--text-paragraph);
     text-decoration: none;
     color: var(--black);
 }
 h1{
-    font-size: var(--text-h1);
+  font-size: var(--text-h1);
 }
 /* ------buttons------ */
 
@@ -128,31 +129,85 @@ h1{
 }
 .btn-primary{
     border: 2px solid #646161;
-    transition: .5s ease-in;
+    transition:  .35s ease-in;
+    position: relative;
+    
+
+}
+.btn-primary::after{
+ 
+  transition: .5s ease-in;
+  position: absolute;
+  background: black;
+  width: 0;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  height: 100%;
+  content: '';
+  
 
 }
 .btn-secondary{
     border: 2px solid #646161;
     transition: .5s ease-in;
+    position: relative;
+
 
 }
-.btn-primary:hover{
-    color: var(--white);
-    background-color: var(--pallete-11);
-   
+.btn-secondary:after{
+  content: '';
+  background: rgb(0, 2, 128);
+  position: absolute;
+  height: 100%;
+  width: 0;
+  right: -1%;
+  top: 0;
+  transition: .5s ease-in;
+  z-index: -1;
+  
 }
-.btn-secondary:hover{
-    color: var(--white);
-    background-color: var(--pallete-13);
+a:hover{
+  color: rgb(194, 179, 179);
+}
+.btn-primary:hover::after{
+    background: black;
+    width: 100%;
+
+}
+.btn-secondary:hover:after{
+    right: 0;
+    width: 100%;
     
 }
+.compare{
+  position: relative;
+  cursor: pointer;
+  
+}
+.compare::after{
+  content: '';
+  height: 5px;
+  width: 10px;
+  background: red;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: .5s ease-in;
+}
+.compare:hover::after{
+  width: 100%;
+}
+
+
 /* -----HEROSECTION--------*/
 .hero-section{
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-inline: auto;
   max-width: 90%;
+  margin-inline: auto;
+  position: relative;
+
+  
+
 }
 .about{
   display: flex;
@@ -160,6 +215,116 @@ h1{
   align-items: flex-start;
   
 }
+ .bout::before{
+  content: '✅';
+}
+.hero-section p{
+  color: var(--pallete-6);
+  font-weight: var(--font-weight-bold);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.hero-section  h1{
+  font-size: var(--text-h1);
+}
+
+ .hero-img{
+  position: absolute;
+  top: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: -20%;
+  max-height: 120px;
+  min-width: 50px;
+  margin-inline: auto;
+  object-fit: cover;
+  z-index: -2;
+
+}
+/* --------WHYUS---------- */
+.why-us{
+  max-width: 90%;
+  margin-inline: auto;
+  height: 800px;
+  position: relative;
+ 
+}
+.back{
+  position: absolute;
+  height: 500px;
+  width:100%;
+  left: 0;
+  top: 50%;
+  right: 0;
+  z-index: -2;
+ 
+  max-width: 100%;
+  
+
+}
+.apply{
+  min-height: 150px;
+  max-width: 250px;
+  border-radius: 50%;
+  background-color: #d2e9e1;
+  position: relative;
+  top: 20%;
+  left: 35%;
+  display: flex;
+  padding: 2.0rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  
+  
+}
+.apply::before, 
+.apply::after{
+  content: '';
+  background: #eaebe5;
+  position: absolute;
+  height: 250px;
+  width: 350px;
+  opacity: .5;
+  border-radius: 50%;
+  z-index: -1;
+}
+#text{
+  padding: 2.0rem;
+  font-size: 1.4rem;
+  
+
+}
+.representative{
+  position: relative;
+  top: 25%;
+  left: 0;
+  padding: 2.0rem;
+  max-height: 350px;
+  min-width: 300px;
+  background-color:#d2e9e1;
+  border-radius: 0 18px 18px 0;
+  
+}
+
+.representative::before,
+.representative::after{
+  
+  max-height: 450px;
+  min-width: 400px;
+  content: '';
+  background: #181817;
+  position: absolute;
+  opacity: .5;
+  border-radius: 0 18px 18px 0;
+  z-index: -1;
+
+}
+#innertext{
+  font-size: clamp(1em, 2vw, 2em);
+}
+
 
 /* ------icons------- */
 .icon-container{
@@ -203,7 +368,11 @@ h1{
     display: flex;
     background-color: var(--black);
     min-height: 200px;
-    
+    position: relative;
+    width: 100%;
+    bottom: 0;
+    right: 0;
+
  
   }
   footer span{
@@ -220,4 +389,28 @@ h1{
 
 
     
+}
+
+@media (max-width:700px) {
+  .contact{
+      display: none;
+  }
+  .open{
+      display: flex;
+  }
+  .hero-img{
+    display: none;
+    position: absolute;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+   
+    
+    
+    
+  }
+  
+  
+
+  
 }
