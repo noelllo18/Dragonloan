@@ -70,7 +70,7 @@
         font-size: 62.5%;
       }
 body{
-    min-height: 100vh;
+    
     font-family: "Poppins", serif;
     
 }
@@ -106,7 +106,7 @@ nav a{
     display: none;
 }
  video, .logo {
-   max-height: 150px;
+   max-height: 90px;
    margin-right: auto;
 
    mix-blend-mode: color;
@@ -205,9 +205,6 @@ a:hover{
   max-width: 90%;
   margin-inline: auto;
   position: relative;
-
-  
-
 }
 .about{
   display: flex;
@@ -226,22 +223,29 @@ a:hover{
 }
 .hero-section  h1{
   font-size: var(--text-h1);
+  display: inline-block;
+}
+.sh{
+  font-size: var(--text-h1);
 }
 
  .hero-img{
   position: absolute;
-  top: 80%;
+  top: 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  right: -20%;
-  max-height: 120px;
-  min-width: 50px;
+  right: 0;
+  min-height: 520px;
+  max-width: 450px;
   margin-inline: auto;
   object-fit: cover;
   z-index: -2;
+  opacity: .9;
+  border-radius: 360px 0px 0px 8px;
 
 }
+
 /* --------WHYUS---------- */
 .why-us{
   max-width: 90%;
@@ -270,7 +274,7 @@ a:hover{
   background-color: #d2e9e1;
   position: relative;
   top: 20%;
-  left: 35%;
+  left: 5%;
   display: flex;
   padding: 2.0rem;
   align-items: center;
@@ -284,8 +288,8 @@ a:hover{
   content: '';
   background: #eaebe5;
   position: absolute;
-  height: 250px;
-  width: 350px;
+  min-height: 220px;
+  min-width: 280px;
   opacity: .5;
   border-radius: 50%;
   z-index: -1;
@@ -305,6 +309,7 @@ a:hover{
   min-width: 300px;
   background-color:#d2e9e1;
   border-radius: 0 18px 18px 0;
+  opacity: .5;
   
 }
 
@@ -324,8 +329,56 @@ a:hover{
 #innertext{
   font-size: clamp(1em, 2vw, 2em);
 }
-
-
+/* ---------cta-------- */
+.trust{
+  max-width: 90%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+.info{
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border-radius:50% ;
+  max-width: 80px;
+  min-height: 80px;
+  position: relative;
+}
+.info::before{
+  content: '';
+  position: absolute;
+  background: #1da0b8;
+  height: 50px;
+  width: 50px;
+  opacity: 0.5;
+  border-radius: 50%;
+  top: 5%;
+  left: -40%;
+  text-decoration: line-through 2px solid ;
+}
+.info::after{
+  content: '';
+  position: absolute;
+  background: #1da0b8;
+  height: 60px;
+  width: 60px;
+  opacity: 0.4;
+  border-radius: 50%;
+  inset: 0;
+  top: 3%;
+  left: -45%;
+  text-decoration: line-through 2px solid ;
+}
+.apply-head{
+  max-width: 90%;
+  margin-inline: auto ;
+}
+.fill-up{
+  max-width: 90%;
+  margin-inline: auto ;
+}
 /* ------icons------- */
 .icon-container{
     display: flex;
@@ -365,13 +418,14 @@ a:hover{
   }
 
   footer{
-    display: flex;
+    display: absolute;
     background-color: var(--black);
     min-height: 200px;
     position: relative;
-    width: 100%;
+    max-width: 100%;
     bottom: 0;
     right: 0;
+    left: 0;
 
  
   }
@@ -399,15 +453,19 @@ a:hover{
       display: flex;
   }
   .hero-img{
-    display: none;
     position: absolute;
-    left: 50%;
+    top: 70%;
+    display: flex;
     align-items: center;
     justify-content: center;
-   
+    right: 0;
+    max-height: 120px;
+    min-width: 50px;
+    margin-inline: auto;
+    object-fit: cover;
+    z-index: -2;
     
-    
-    
+  
   }
   
   
