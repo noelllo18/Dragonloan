@@ -47,3 +47,5 @@ document.getElementById('loan-form').addEventListener('submit', function(e) {
     document.getElementById('total-payment').innerText = totalPayment.toFixed(2);
     document.getElementById('total-interest').innerText = totalInterest.toFixed(2);
 });
+
+alert('Welcome to DragonLoan!')

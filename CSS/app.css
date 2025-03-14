@@ -38,12 +38,12 @@
     /*=============== fontsize ==============  */
     --text-sm: 1.2rem;
     --text-base: 1.6rem;
-    --text-paragraph: 2rem;
+    --text-paragraph: clamp(1.5em, 2vw, 4em);;
     --text-h5: 2.4rem;
     --text-h4: 3.2rem;
     --text-h3:  4.0rem;
     --text-h2: 4.8rem;
-    --text-h1: clamp(3em, 5vw, 5em);
+    --text-h1: clamp(5em, 5vw, 8em);
     
     /*=============== fontweight ==============  */
     --font-weight-normal: 400;
@@ -106,16 +106,22 @@ nav a{
     display: none;
 }
  video, .logo {
-   max-height: 90px;
+   max-height: 150px;
    margin-right: auto;
 
    mix-blend-mode: darken;
     
 }
-a, span, p{
-    font-size: var(--text-paragraph);
+a{
     text-decoration: none;
     color: var(--black);
+    font-size: clamp(2em, 2vw, 3em);
+}
+p{
+  font-size: var(--text-paragraph);
+}
+span{
+  font-size: clamp(2em, 2vw, 3em);
 }
 h1{
   font-size: var(--text-h1);
@@ -168,6 +174,7 @@ h1{
   
 }
 a:hover{
+  text-decoration: none;
   color: rgb(194, 179, 179);
 }
 .btn-primary:hover::after{
@@ -183,7 +190,7 @@ a:hover{
 .compare{
   position: relative;
   cursor: pointer;
-  
+  font-size: clamp(2em, 2vw, 3em);
 }
 .compare::after{
   content: '';
@@ -204,6 +211,7 @@ a:hover{
 .hero-section{
   max-width: 90%;
   margin-inline: auto;
+  
   position: relative;
 }
 .about{
@@ -236,35 +244,37 @@ a:hover{
   align-items: center;
   justify-content: center;
   right: 0;
-  min-height: 520px;
-  max-width: 450px;
+  min-height: 420px;
+  max-width: 850px;
   margin-inline: auto;
   object-fit: cover;
   z-index: -2;
-  opacity: .9;
+  
   border-radius: 360px 0px 0px 8px;
+  box-shadow: 8px 5px 15px rgba(0, 0, 0, 75);
 
 }
 
 /* --------WHYUS---------- */
 .why-us{
   max-width: 90%;
+  margin-top: 250px;
+  height: 100vh;
   margin-inline: auto;
-  height: 800px;
   position: relative;
  
 }
 .back{
   position: absolute;
-  height: 500px;
   width:100%;
+  height: 100%;
   left: 0;
-  top: 50%;
+  top: 0;
   right: 0;
-  z-index: -2;
-  mix-blend-mode:normal
+  z-index: -4;
+  mix-blend-mode:normal;
  
-  max-width: 100%;
+ 
   
 
 }
@@ -274,7 +284,8 @@ a:hover{
   border-radius: 50%;
   background-color: #d2e9e1;
   position: relative;
-  top: 20%;
+  top: 0;
+  margin-bottom: 150px;
   left: 25%;
   display: flex;
   padding: 2.0rem;
@@ -303,33 +314,95 @@ a:hover{
 }
 .representative{
   position: relative;
-  top: 25%;
+  top: 0;
   left: 0;
+  bottom: 0;
   padding: 2.0rem;
-  max-height: 350px;
-  min-width: 300px;
+  
+  width: 90%;
   background-color:#d2e9e1;
   border-radius: 0 18px 18px 0;
-  opacity: .5;
+  opacity: 0.9;
   
 }
 
-.representative::before,
+
 .representative::after{
   
-  max-height: 450px;
-  min-width: 400px;
+  height: 110%;
+  width: 101%;
   content: '';
-  background: #181817;
+  background: #eaebe5;
   position: absolute;
-  opacity: .5;
   border-radius: 0 18px 18px 0;
   z-index: -1;
+  top: -5%;
+  right: -15%;
+  left: 0;
 
 }
 #innertext{
-  font-size: clamp(1em, 2vw, 2em);
+  font-size: clamp(1em, 1vw, 3em);
 }
+/* ---------TESTIMONIAL------- */
+.testcontainer{
+  
+  max-width: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  /* background-color: #26a9e6; */
+  margin-top: 150px;
+  flex-wrap: wrap;
+  
+}
+.testimonial{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(45deg,rgb(69, 95, 69), rgb(133, 133, 5));
+  min-height: 600px;
+  max-width: 500px;
+  padding: 5.0rem;
+  width: 90%;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 2px 8px 15px rgb(17, 16, 16);
+ 
+}
+.testimonial p{
+  font-size: var(--text-paragraph);
+}
+.avatar{
+  position: absolute;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  bottom: 2%;
+  right: 2%;
+  box-shadow: 5px 8px 15px rgb(17, 16, 16);
+  
+}
+.testimonial::after{
+  content: '❞';
+  
+  position: absolute;
+  top: 15%;
+  right: 5%;
+  font-size: clamp(5em,10vw,9em);
+  color: #00ffff;
+  text-shadow: 2px 5px 15px rgb(0, 2, 128);
+}
+
+
+
+
+
+
+
+
 /* ---------cta-------- */
 .trust{
   margin-top: 250px;
@@ -377,65 +450,53 @@ a:hover{
 .apply-head{
   margin-top: 150px;
   max-width: 90%;
-  margin-inline: auto ;
+  margin-right: 50px;
+  background-color: var(--pallete-7);
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0px 158px 0  0 ;
+  box-shadow: 16px 19px 15px rgb(17, 16, 16);
+}
+#fee{
+  background-color: var(--pallete-16);
+  padding: 2.0rem;
 }
 .fill-up{
   max-width: 90%;
-  margin-inline: auto ;
+  margin-right: 50px;
+  background-color:var(--pallete-7) ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 15px 18px 15px rgb(17, 16, 16);
+}
+.apply-head h2{
+  font-size: clamp(.3em,5vw,8em);
+}
+.form-group{
+  
+  gap: 150px;
+}
+input{
+  font-size: 2.4rem;
+ 
+
+}
+.btn-tertiary{
+  background-color: #4165D5;
+  padding: 1.0rem 1.5rem;
+  margin: 20px 65%;
+  border-radius: 1.5rem;
+}
+.result{
+  display: none;
 }
 /* ------icons------- */
-.icon-container{
-    display: flex;
-    gap: 20px;
-    padding: 1.0rem;
-    align-items: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    position: relative;
-  }
-  .icons{
-    display: flex;
-    background-color: transparent;
-    backdrop-filter: blur(15px);
-    color: var(--white);
-    border-radius: 20px;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
-    display: flex;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    background-color: #111142;
-    margin-right: 20px;
-    border: 1px solid #380ce6;
-    box-shadow: 0 2px 15px#4321cc;
-    cursor: pointer;
-    transition: .5s ease-in-out;
-  }
-  .icons:hover{
-    background-color: #0ce6d4;
-    fill: #00ffff;
-  }
-  .iconic:hover{
-    fill: white;
-  }
 
-  footer{
-    display: absolute;
-    background-color: var(--black);
-    min-height: 200px;
-    position: relative;
-    max-width: 100%;
-    bottom: 0;
-    right: 0;
-    left: 0;
-
- 
-  }
-  footer span{
-    color: var(--white);
-  }
 
 @media (max-width:1200px) {
     .contact{
