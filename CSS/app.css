@@ -72,7 +72,13 @@
 body{
     background-color: #f5faf6;
     font-family: "Poppins", serif;
-    overflow-x: hidden;
+    
+}
+.container{
+  margin-inline: auto;
+  width: 90%;
+  overflow-x: hidden;
+  scroll-snap-type: mandatory;
 }
 /* ---Nabigation----- */
 
@@ -211,7 +217,7 @@ a:hover{
 .hero-section{
   max-width: 90%;
   margin-inline: auto;
-  
+  height: 70vh;
   position: relative;
 }
 .about{
@@ -350,7 +356,7 @@ a:hover{
 /* ---------TESTIMONIAL------- */
 .testcontainer{
   
-  max-width: 100%;
+  max-width: 90%;
   margin-inline: auto;
   display: flex;
   align-items: center;
@@ -369,7 +375,7 @@ a:hover{
   min-height: 600px;
   max-width: 500px;
   padding: 5.0rem;
-  width: 90%;
+  width: 100%;
   border-radius: 12px;
   position: relative;
   box-shadow: 2px 8px 15px rgb(17, 16, 16);
