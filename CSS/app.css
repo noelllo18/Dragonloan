@@ -218,7 +218,7 @@ a:hover{
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  
+  transition: .5s ease-in;
 }
  .bout::before{
   content: '✅';
@@ -262,6 +262,7 @@ a:hover{
   height: 100vh;
   margin-inline: auto;
   position: relative;
+  transition: .5s ease-in;
  
 }
 .back{
@@ -282,7 +283,7 @@ a:hover{
   min-height: 150px;
   max-width: 250px;
   border-radius: 50%;
-  background-color: #d2e9e1;
+  background-color: #99c4b5;
   position: relative;
   top: 0;
   margin-bottom: 150px;
@@ -292,6 +293,8 @@ a:hover{
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  opacity: 0.8;
+  transition: .5s ease-in;
   
   
 }
@@ -318,11 +321,11 @@ a:hover{
   left: 0;
   bottom: 0;
   padding: 2.0rem;
-  
   width: 90%;
-  background-color:#d2e9e1;
+  background-color:#99c4b5;
   border-radius: 0 18px 18px 0;
   opacity: 0.9;
+  
   
 }
 
@@ -370,6 +373,7 @@ a:hover{
   border-radius: 12px;
   position: relative;
   box-shadow: 2px 8px 15px rgb(17, 16, 16);
+  transition: .5s ease-in;
  
 }
 .testimonial p{
