@@ -569,7 +569,10 @@ input{
   
   }
   .container{
-    overflow-x: auto;
+    overflow-x: hidden;
+    scroll-snap-type: mandatory;
+    scroll-behavior: smooth;
+
    }
    .down{
     position: absolute;
