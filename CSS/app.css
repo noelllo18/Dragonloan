@@ -442,45 +442,27 @@ a:hover{
   margin-top: 250px;
   max-width: 90%;
   margin-inline: auto;
-  display: flex;
-  align-items: center;
+  
+  
+ 
   gap: 50px;
 }
 .info{
-  margin-left: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 50px;
-  border-radius:50% ;
-  max-width: 80px;
-  min-height: 80px;
+  display: inline-flex;
+  
+  gap: 20px;
+ 
   position: relative;
 }
-.info::before{
-  content: '';
-  position: absolute;
-  background: #1da0b8;
-  height: 50px;
-  width: 50px;
-  opacity: 0.5;
-  border-radius: 50%;
-  top: 5%;
-  left: -40%;
-  text-decoration: line-through 2px solid ;
-}
 .info::after{
-  content: '';
-  position: absolute;
-  background: #1da0b8;
-  height: 60px;
-  width: 60px;
-  opacity: 0.4;
-  border-radius: 50%;
-  inset: 0;
-  top: 3%;
-  left: -45%;
-  text-decoration: line-through 2px solid ;
+  display: block;
+    position: absolute;
+    content: "";
+    border-top: solid 20px #39AE4C;
+    border-left: solid 20px transparent;
+    border-right: solid 20px transparent;
 }
+
 .apply-head{
   margin-top: 150px;
   max-width: 90%;
