@@ -48,4 +48,3 @@ document.getElementById('loan-form').addEventListener('submit', function(e) {
     document.getElementById('total-interest').innerText = totalInterest.toFixed(2);
 });
 
-alert('Welcome to DragonLoan!')
